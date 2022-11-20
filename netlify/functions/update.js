@@ -1,7 +1,7 @@
-const axios = require("axios").default;
+const axios = require("axios");
 
 exports.handler = async (event) => {
-  console.log(`Received`, event.body);
+  console.log(`Ricevuto da Telegram`, event.body);
 
   const chatID = JSON.parse(event.body).message.chat.id;
 
@@ -11,7 +11,7 @@ exports.handler = async (event) => {
 
   await axios.post(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
     chat_id: chatID,
-    text: "I got your message!"
+    text: "Inviato a Telegram"
   });
 
   return { statusCode: 200 };
