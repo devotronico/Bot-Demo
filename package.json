@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/devotronico/Bot-Demo/issues"
   },
-  "homepage": "https://github.com/devotronico/Bot-Demo#readme"
+  "homepage": "https://github.com/devotronico/Bot-Demo#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
 }
