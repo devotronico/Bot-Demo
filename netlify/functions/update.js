@@ -1,4 +1,4 @@
-const axios = require("axios");
+const sendMessage = require("../../src/sendMessage");
 
 exports.handler = async (event) => {
   console.log(`Ricevuto da Telegram`, event.body);
@@ -8,11 +8,7 @@ exports.handler = async (event) => {
   if (!chatID) {
     return { statusCode: 500 };
   }
-
-  await axios.post(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
-    chat_id: chatID,
-    text: "Inviato a Telegram"
-  });
+  await sendMessage(chatID, "Inviato a Telegram 2");
 
   return { statusCode: 200 };
 };
